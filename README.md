@@ -38,7 +38,7 @@ fi
 ## Docker Escaping Techniques
 
 ### 1. Escape via Exposed Docker Daemon
-Run the following cmnd
+Run the following cmd
 
 If we're in bash
 ```markdown
