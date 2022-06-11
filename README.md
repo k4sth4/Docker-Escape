@@ -97,7 +97,7 @@ chmod +x /c;sh -c "echo 0 >$d/w/cgroup.procs";
 
 ### 5. Exploitation of docker.sock in /var/run or /run if you're ROOT
 
-Check /var/run dir for docker.sock file if it's there and you're root then you can exploit it. First see that you can use curl cmd if not then wget curl from your system for static curl see the arch of target machine and get the static curl from [Resource](https://github.com/moparisthebest/static-curl)
+Check /var/run dir for docker.sock file, if it's there and you're root then you can exploit it. First see that you can use curl cmd, if not then wget static curl from your system for static curl see the arch of target machine and get the static curl from [Resource](https://github.com/moparisthebest/static-curl)
 
 
 STEP1: Listing the images of the container of the host
